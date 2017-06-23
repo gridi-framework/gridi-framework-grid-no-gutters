@@ -1,0 +1,35 @@
+.grid-no-gutters {
+    &.container-full,
+    &.container,
+    .container-full,
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &.row,
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &.#{$grid-column-class-prefix},
+    .#{$grid-column-class-prefix} {
+        @if variable-exists(grid-vertical-gutter) {
+            padding: 0;
+        } @else {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+@if variable-exists(grid-vertical-gutter) {
+    .grid-no-vertical-gutters {
+        &.#{$grid-column-class-prefix},
+        .#{$grid-column-class-prefix} {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
